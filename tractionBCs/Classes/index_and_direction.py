@@ -7,8 +7,8 @@ class dim:
     # nx = input(("Enter nx: "))
     # ny = input(("Enter ny: "))
 
-    nx = 8
-    ny = 8
+    nx = 50
+    ny = 4
 
 class index(dim):
 
@@ -249,7 +249,7 @@ class cell_index(dim):
                 & (k%(dim().nx+2) == dim().nx):
             return True
         else:
-            return False 
+            return False
 
 #######################################################################
 
