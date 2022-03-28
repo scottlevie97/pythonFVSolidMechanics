@@ -1,4 +1,4 @@
 class dim:
     
-	nx = 10
-	ny = 10
+	nx = 40
+	ny = 4
