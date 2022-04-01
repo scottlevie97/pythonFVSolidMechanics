@@ -1,1 +1,0 @@
-This study is for a steady state scenario
