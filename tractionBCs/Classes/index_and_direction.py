@@ -6,9 +6,9 @@ class dim:
 
     # nx = input(("Enter nx: "))
     # ny = input(("Enter ny: "))
-
-    nx = 50
-    ny = 4
+    
+	nx = 40
+	ny = 3
 
 class index(dim):
 
@@ -183,6 +183,8 @@ class boundary_point_index(dim):
             return True
         else:
             return False 
+        
+
 
 ##########################################################################################
 
@@ -251,6 +253,19 @@ class cell_index(dim):
         else:
             return False
 
+    def no_boundary(self, k):
+
+        if (k > cell_index.bottom_left_corner_val + (dim().nx + 2) ) &\
+             (k < cell_index.top_right_corner_val - (dim().nx + 2) ) &\
+                  (k%(dim().nx+2) != dim().nx) &\
+                       (k%(dim().nx+2) != 1) &\
+                            (k%(dim().nx+2) != 0) &\
+                                (k%(dim().nx+2) != dim().nx+1):
+                                return True
+        else:
+            return False
+
+
 #######################################################################
 
 class displacement(boundary_point_index, cell_index, dim):
@@ -285,4 +300,5 @@ class displacement(boundary_point_index, cell_index, dim):
         if k <= boundary_point_index().top_right_right_val:
             self.NW = u_previous[k+(dim().nx+2)-1, direction]  
 
-print(dim.nx)  
+print(dim.nx) 
+print(dim.ny)  
