@@ -9,15 +9,13 @@ tags:
 authors:
 - name: Scott Levie
   orcid: 0000-0002-4302-5887
-  affiliation: 2
+  affiliation: 1
 - name: Philip Cardiff
-  orcid: xxxx-xxxx-xxxx-xxxxx
-  affiliation: "1, 2"
+  orcid: 0000-0002-4824-427X
+  affiliation: 1
 affiliations:
-- name: University College Dublin
+- name: University College Dublin, School of Mechanical and Materials Engineering, Belfield, Ireland
   index: 1
-- name: IRC?
-  index: 2
 date: 01 April 2022
 bibliography: paper.bib
 ---
