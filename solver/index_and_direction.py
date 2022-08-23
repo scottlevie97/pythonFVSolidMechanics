@@ -7,8 +7,8 @@ class dim:
 
     # nx = input(("Enter nx: "))
     # ny = input(("Enter ny: "))
-	nx = 40
-	ny = 4
+	nx = 6
+	ny = 5
 
 
 class index(dim):
@@ -16,8 +16,8 @@ class index(dim):
 
         self.k = k
 
-        n = dim().nx + 2
-        s = -dim().nx - 2
+        n = dim().nx
+        s = -dim().nx
         e = +1
         w = -1
         ne = n + e
@@ -36,8 +36,8 @@ class index(dim):
 
     def dir(self, directionarray):
 
-        n = dim().nx + 2
-        s = -dim().nx - 2
+        n = dim().nx
+        s = -dim().nx
         e = +1
         w = -1
         ne = n + e
@@ -61,147 +61,15 @@ class index(dim):
         return direction
 
 
-#########################################################################
-
-
-class boundary_point_index(dim):
-
-    bottom_left_corner_val = 0
-    bottom_right_corner_val = dim().nx + 1
-    top_left_corner_val = (dim().nx + 2) * (dim().ny + 1)
-    top_right_corner_val = (dim().nx + 2) * (dim().ny + 2) - 1
-
-    bottom_left_bottom_val = bottom_left_corner_val + 1
-    bottom_left_left_val = bottom_left_corner_val + dim().nx + 2
-    bottom_right_bottom_val = bottom_right_corner_val - 1
-    bottom_right_right_val = bottom_right_corner_val + dim().nx + 2
-    top_left_left_val = top_left_corner_val - (dim().nx + 2)
-    top_left_top_val = top_left_corner_val + 1
-    top_right_right_val = top_right_corner_val - (dim().nx + 2)
-    top_right_top_val = top_right_corner_val - 1
-
-    def bottom_left_bottom(self, k):
-        if k == boundary_point_index.bottom_left_bottom_val:
-            return True
-        else:
-            return False
-
-    def bottom_left_left(self, k):
-        if k == boundary_point_index.bottom_left_left_val:
-            return True
-        else:
-            return False
-
-    def bottom_right_bottom(self, k):
-        if k == boundary_point_index.bottom_right_bottom_val:
-            return True
-        else:
-            return False
-
-    def bottom_right_right(self, k):
-        if k == boundary_point_index.bottom_right_right_val:
-            return True
-        else:
-            return False
-
-    def top_left_left(self, k):
-        if k == boundary_point_index.top_left_left_val:
-            return True
-        else:
-            return False
-
-    def top_left_top(self, k):
-        if k == boundary_point_index.top_left_top_val:
-            return True
-        else:
-            return False
-
-    def top_right_right(self, k):
-        if k == boundary_point_index.top_right_right_val:
-            return True
-        else:
-            return False
-
-    def top_right_top(self, k):
-        if k == boundary_point_index.top_right_top_val:
-            return True
-        else:
-            return False
-
-    def bottom_left_corner(self, k):
-        if k == boundary_point_index.bottom_left_corner_val:
-            return True
-        else:
-            return False
-
-    def bottom_right_corner(self, k):
-        if k == boundary_point_index.bottom_right_corner_val:
-            return True
-        else:
-            return False
-
-    def top_left_corner(self, k):
-        if k == boundary_point_index.top_left_corner_val:
-            return True
-        else:
-            return False
-
-    def top_right_corner(self, k):
-        if k == boundary_point_index.top_right_corner_val:
-            return True
-        else:
-            return False
-
-    def center_bottom(self, k):
-
-        if (k > boundary_point_index.bottom_left_bottom_val) & (
-            k < boundary_point_index.bottom_right_bottom_val
-        ):
-            return True
-        else:
-            return False
-
-    def center_top(self, k):
-
-        if (k > boundary_point_index.top_left_top_val) & (
-            k < boundary_point_index.top_right_top_val
-        ):
-            return True
-        else:
-            return False
-
-    def center_left(self, k):
-
-        if (
-            (k < boundary_point_index.top_left_left_val)
-            & (k > boundary_point_index.bottom_left_left_val)
-            & (k % (dim().nx + 2) == 0)
-        ):
-            return True
-        else:
-            return False
-
-    def center_right(self, k):
-
-        if (
-            (k < boundary_point_index.top_right_right_val)
-            & (k > boundary_point_index.bottom_right_right_val)
-            & (k % (dim().nx + 2) == dim().nx + 1)
-        ):
-            return True
-        else:
-            return False
-
-
 ##########################################################################################
 
 
 class cell_index(dim):
 
-    bottom_left_corner_val = dim().nx + 3
-    bottom_right_corner_val = 2 * (dim().nx + 2) - 2
-    top_left_corner_val = (dim().nx + 2) * (dim().ny + 2) - 2 * (dim().nx + 2) + 1
-    top_right_corner_val = (dim().nx + 2) * (dim().ny + 2) - (dim().nx + 2) - 2
+    bottom_left_corner_val = 0
+    bottom_right_corner_val = dim().nx - 1
+    top_left_corner_val = (dim().nx ) * (dim().ny) - dim().nx
+    top_right_corner_val = (dim().nx ) * (dim().ny ) - 1
 
     def bottom_left_corner(self, k):
         if k == cell_index.bottom_left_corner_val:
@@ -248,7 +116,7 @@ class cell_index(dim):
         if (
             (k < cell_index.top_left_corner_val)
             & (k > cell_index.bottom_right_corner_val)
-            & (k % (dim().nx + 2) == 1)
+            & (k % dim().nx == 0)
         ):
             return True
         else:
@@ -259,7 +127,7 @@ class cell_index(dim):
         if (
             (k < cell_index.top_left_corner_val)
             & (k > cell_index.bottom_right_corner_val)
-            & (k % (dim().nx + 2) == dim().nx)
+            & (k % dim().nx == dim().nx - 1)
         ):
             return True
         else:
@@ -268,12 +136,10 @@ class cell_index(dim):
     def no_boundary(self, k):
 
         if (
-            (k > cell_index.bottom_left_corner_val + (dim().nx + 2))
-            & (k < cell_index.top_right_corner_val - (dim().nx + 2))
-            & (k % (dim().nx + 2) != dim().nx)
-            & (k % (dim().nx + 2) != 1)
-            & (k % (dim().nx + 2) != 0)
-            & (k % (dim().nx + 2) != dim().nx + 1)
+            (k > cell_index.bottom_right_corner_val + 1)
+            & (k < cell_index.top_left_corner_val - 1)
+            & (k % (dim().nx) != 0)
+            & (k % (dim().nx) != (dim().nx-1))
         ):
             return True
         else:
@@ -282,8 +148,7 @@ class cell_index(dim):
 
 #######################################################################
 
-
-class displacement(boundary_point_index, cell_index, dim):
+class displacement(cell_index, dim):
 
     # add a statement using indexes
 
@@ -291,29 +156,29 @@ class displacement(boundary_point_index, cell_index, dim):
 
         self.P = U_previous[k, direction]
 
-        if k > boundary_point_index().bottom_right_corner_val:
-            self.S = U_previous[k - (dim().nx + 2), direction]
+        if k > cell_index().bottom_right_corner_val:
+            self.S = U_previous[k - dim().nx, direction]
 
-        if k < boundary_point_index().top_left_corner_val:
-            self.N = U_previous[k + (dim().nx + 2), direction]
+        if k < cell_index().top_left_corner_val:
+            self.N = U_previous[k + dim().nx, direction]
 
-        if k > boundary_point_index().bottom_left_corner_val:
+        if k > cell_index().bottom_left_corner_val:
             self.W = U_previous[k - 1, direction]
 
-        if k < boundary_point_index().top_right_corner_val:
+        if k < cell_index().top_right_corner_val:
             self.E = U_previous[k + 1, direction]
 
         if k >= cell_index().bottom_left_corner_val:
-            self.SE = U_previous[k - (dim().nx + 2) + 1, direction]
+            self.SE = U_previous[k - dim().nx + 1, direction]
 
-        if k >= boundary_point_index().bottom_left_left_val:
-            self.SW = U_previous[k - (dim().nx + 2) - 1, direction]
+        if k >= (cell_index().bottom_left_corner_val + 1):
+            self.SW = U_previous[k - dim().nx - 1, direction]
 
-        if k <= cell_index().top_right_corner_val:
-            self.NE = U_previous[k + (dim().nx + 2) + 1, direction]
+        if k < (cell_index().top_left_corner_val - 1):
+            self.NE = U_previous[k + dim().nx + 1, direction]
 
-        if k <= boundary_point_index().top_right_right_val:
-            self.NW = U_previous[k + (dim().nx + 2) - 1, direction]
+        if k < (cell_index().top_left_corner_val):
+            self.NW = U_previous[k + dim().nx - 1, direction]
 
 
 print(dim.nx)
