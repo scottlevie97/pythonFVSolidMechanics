@@ -7,8 +7,8 @@ class dim:
 
     # nx = input(("Enter nx: "))
     # ny = input(("Enter ny: "))
-	nx = 50
-	ny = 10
+	nx = 200
+	ny = 20
 
 
 class index(dim):
