@@ -7,8 +7,8 @@ class dim:
 
     # nx = input(("Enter nx: "))
     # ny = input(("Enter ny: "))
-	nx = 8
-	ny = 3
+	nx = 20
+	ny = 4
 
 
 class index(dim):
@@ -162,22 +162,22 @@ class displacement(cell_index, dim):
         if k < cell_index().top_left_corner_val:
             self.N = U_previous[k + dim().nx, direction]
 
-        if k > cell_index().bottom_left_corner_val:
+        if (k%dim().nx != 0):
             self.W = U_previous[k - 1, direction]
 
-        if k < cell_index().top_right_corner_val:
+        if (k%dim().nx != dim().nx -1):
             self.E = U_previous[k + 1, direction]
 
-        if k >= cell_index().bottom_left_corner_val:
+        if (k > cell_index().bottom_left_corner_val) & (k%dim().nx != dim().nx -1):
             self.SE = U_previous[k - dim().nx + 1, direction]
 
-        if k >= (cell_index().bottom_left_corner_val + 1):
+        if (k > cell_index().bottom_left_corner_val) & (k%dim().nx != 0):
             self.SW = U_previous[k - dim().nx - 1, direction]
 
-        if k < (cell_index().top_left_corner_val - 1):
+        if (k < cell_index().top_left_corner_val) & (k%dim().nx != dim().nx -1):
             self.NE = U_previous[k + dim().nx + 1, direction]
 
-        if k < (cell_index().top_left_corner_val):
+        if (k < cell_index().top_left_corner_val) & (k%dim().nx != 0):
             self.NW = U_previous[k + dim().nx - 1, direction]
 
 

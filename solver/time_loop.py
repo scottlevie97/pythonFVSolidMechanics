@@ -15,11 +15,11 @@ from matplotlib import pyplot as plt
 import warnings
 warnings.filterwarnings('ignore', '.*do not.*', )
 
-recordResults = False
+recordResults = True
 plotOngoingResiudalGraph = True
 
-# How many iterations between plotting residuals
-sampleRate = 100
+# How many iterati  ons between plotting residuals
+sampleRate = 200
 
 # Time loop
 if recordResults:
@@ -63,13 +63,14 @@ for time in t:
     A_y = A("y").createMatrix()        
     A_y = boundary_conditions_A(A_y, U_previous, U_old, U_old_old, "y")
 
+    saveArray(str(round(time, 2)) + "/A_x", A_x)
+    saveArray(str(round(time, 2)) + "/A_y", A_y)
+
 
     # plt.hlines(tolerance, 0, len(moving_average_graph_array)*10, color = "C1", label  = "Tolerance")
     plt.yscale("log")
     plt.xlabel("Iterations")
-    plt.ylabel("Residual")
-    plt.legend()
-    
+    plt.ylabel("Residual")    
 
     # Momentum Loop    
     while True:
@@ -121,17 +122,7 @@ for time in t:
 
         # # Print residual progress every 500 iterations
         if icorr % 50 == 0:
-
-            # # plt.plot(np.arange(0, len(residual_array)), residual_array, label = "Residuals")
             plt.plot(np.arange(100, len(moving_average_graph_array)*10, 10), moving_average_graph_array[10:len( moving_average_graph_array)], label = "Moving Average", color = "C2")
-            # # plt.scatter((len(moving_average_graph_array)-50)*10, moving_average_graph_array[len(moving_average_graph_array)-50], color = "C1", label  = "Residual 500 iterations ago")
-
-            # plt.hlines(tolerance, 0, len(moving_average_graph_array)*10, color = "C1", label  = "Tolerance")
-            # plt.yscale("log")
-            # plt.xlabel("Iterations")
-            # plt.ylabel("Residual")
-            # plt.legend()
-            # plt.show()
 
         if (icorr % 10 == 0) & (icorr > 10):
             plt.plot(np.arange(10, len(moving_average_graph_array)*10, 10), moving_average_graph_array[1:len( moving_average_graph_array)], color = "C0",  label = "Residual")
@@ -168,12 +159,13 @@ for time in t:
     U_old = U_new    
 
     #------------------#
-    # # Save displacement field
-    # saveArray(str(round(time, 2)) + "/U_fine_mesh" , U_new)
+    # Save displacement field
+    if recordResults:
+        saveArray(str(round(time, 2)) + "/U_fine_mesh" , U_new)
 
-    # U_with_boundaries, V_with_boundaries = addBoundaryDisplacements(U_new)
-    # saveArray(str(round(time, 2)) + "/U_with_boundaries" , U_with_boundaries)
-    # saveArray(str(round(time, 2)) + "/V_with_boundaries" , V_with_boundaries)
+        U_with_boundaries, V_with_boundaries = addBoundaryDisplacements(U_new)
+        saveArray(str(round(time, 2)) + "/U_with_boundaries" , U_with_boundaries)
+        saveArray(str(round(time, 2)) + "/V_with_boundaries" , V_with_boundaries)
 
 
 
