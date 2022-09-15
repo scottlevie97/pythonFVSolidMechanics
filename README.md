@@ -1,29 +1,16 @@
-# README #
+# Python Finite Volume Solid Mechanics 
 
-This README would normally document whatever steps are necessary to get your application up and running.
+Host website for finite volume solid mechanics eductional framework by Scott Levie
 
-### What is this repository for? ###
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+## List of notebooks:
 
-### How do I get set up? ###
+- [Notebook 1: Defining Mesh](https://nbviewer.org/github/scottlevie97/python_FVM_CSM/blob/newBoundaryConditions/seperate_notebooks/_01_Defining_Mesh.ipynb)
+- [Notebook 2: Derivation & Discretistion](https://nbviewer.org/github/scottlevie97/python_FVM_CSM/blob/newBoundaryConditions/seperate_notebooks/_02_Derivation_Discretistion.ipynb)
+- [Notebook 3: Internal Cells](https://nbviewer.org/github/scottlevie97/python_FVM_CSM/blob/newBoundaryConditions/seperate_notebooks/_03_Internal_Cells.ipynb)
+- [Notebook 4: Fixed Displacement BCs](https://nbviewer.org/github/scottlevie97/python_FVM_CSM/blob/newBoundaryConditions/seperate_notebooks/_04_Fixed_Displacement_BCs.ipynb)
+- [Notebook 5: Fixed Traction BCs](https://nbviewer.org/github/scottlevie97/python_FVM_CSM/blob/newBoundaryConditions/seperate_notebooks/_05_Fixed_Traction_BCs.ipynb)
+- [Notebook 6: Solution Algorithm](https://nbviewer.org/github/scottlevie97/python_FVM_CSM/blob/newBoundaryConditions/seperate_notebooks/_06_Solution_Algorithm.ipynb)
+- [Notebook 7: Time Loop](https://nbviewer.org/github/scottlevie97/python_FVM_CSM/blob/newBoundaryConditions/seperate_notebooks/_07_Time_Loop.ipynb)
+- [Notebook 8: Post-Processing](https://nbviewer.org/github/scottlevie97/python_FVM_CSM/blob/newBoundaryConditions/seperate_notebooks/_08_Post-Processing.ipynb)
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
-
-### Contribution guidelines ###
-
-* Writing tests
-* Code review
-* Other guidelines
-
-### Who do I talk to? ###
-
-* Repo owner or admin
-* Other community or team contact
