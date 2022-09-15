@@ -1,7 +1,8 @@
+<!-- This page is for temporary website -->
+
 # Python Finite Volume Solid Mechanics 
 
-Host website for finite volume solid mechanics eductional framework by Scott Levie
-
+Host website for finite volume solid mechanics eductional framework by Scott Levie. 
 
 ## List of notebooks:
 
@@ -14,3 +15,4 @@ Host website for finite volume solid mechanics eductional framework by Scott Lev
 - [Notebook 7: Time Loop](https://nbviewer.org/github/scottlevie97/python_FVM_CSM/blob/newBoundaryConditions/seperate_notebooks/_07_Time_Loop.ipynb)
 - [Notebook 8: Post-Processing](https://nbviewer.org/github/scottlevie97/python_FVM_CSM/blob/newBoundaryConditions/seperate_notebooks/_08_Post-Processing.ipynb)
 
+[Github repo](https://github.com/scottlevie97/pythonFVSolidMechanics) 
