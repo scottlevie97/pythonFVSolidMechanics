@@ -2,7 +2,7 @@
 
 # Python Finite Volume Solid Mechanics 
 
-Host website for finite volume solid mechanics eductional framework by Scott Levie. 
+Host [website](https://scottlevie97.github.io/pythonFVSolidMechanics/) for finite volume solid mechanics eductional framework by Scott Levie. 
 
 ## List of notebooks:
 
