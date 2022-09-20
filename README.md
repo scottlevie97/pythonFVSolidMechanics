@@ -15,4 +15,6 @@ Host [website](https://scottlevie97.github.io/pythonFVSolidMechanics/) for finit
 - [Notebook 7: Time Loop](https://nbviewer.org/github/scottlevie97/pythonFVSolidMechanics/blob/newBoundaryConditions/seperate_notebooks/_07_Time_Loop.ipynb?flush_cache=true)
 - [Notebook 8: Post-Processing](https://nbviewer.org/github/scottlevie97/pythonFVSolidMechanics/blob/newBoundaryConditions/seperate_notebooks/_08_Post-Processing.ipynb?flush_cache=true)
 
+[Binder (Online Jupyter notebooks)](https://hub.gke2.mybinder.org/user/scottlevie97-py-vsolidmechanics-clb256y9/doc/workspaces/auto-L/tree/seperate_notebooks)
+
 [Github repo](https://github.com/scottlevie97/pythonFVSolidMechanics) 
