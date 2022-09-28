@@ -19,4 +19,6 @@ Run notebooks online using binder:
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/git/https%3A%2F%2Fgithub.com%2Fscottlevie97%2FpythonFVSolidMechanics/newBoundaryConditions?labpath=seperate_notebooks)
 
+[Binder](https://mybinder.org/v2/gh/scottlevie97/pythonFVSolidMechanics/newBoundaryConditions?labpath=seperate_notebooks)
+
 [Github repo](https://github.com/scottlevie97/pythonFVSolidMechanics) 
