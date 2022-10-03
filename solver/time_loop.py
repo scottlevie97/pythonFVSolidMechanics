@@ -15,7 +15,7 @@ from matplotlib import pyplot as plt
 import warnings
 warnings.filterwarnings('ignore', '.*do not.*', )
 
-recordResults = True
+recordResults = False
 plotOngoingResiudalGraph = True
 
 # How many iterati  ons between plotting residuals
@@ -44,7 +44,7 @@ for time in t:
     # Reset iteration counter
     icorr = 1
 
-    # Set number of maximum iterations for convergence    
+    # Set number of maximu_m iterations for convergence    
     maxcorr = 100000
 
     # Make directory for timestep
@@ -63,8 +63,8 @@ for time in t:
     A_y = A("y").createMatrix()        
     A_y = boundary_conditions_A(A_y, U_previous, U_old, U_old_old, "y")
 
-    saveArray(str(round(time, 2)) + "/A_x", A_x)
-    saveArray(str(round(time, 2)) + "/A_y", A_y)
+    # saveArray(str(round(time, 2)) + "/A_x", A_x)
+    # saveArray(str(round(time, 2)) + "/A_y", A_y)
 
 
     # plt.hlines(tolerance, 0, len(moving_average_graph_array)*10, color = "C1", label  = "Tolerance")

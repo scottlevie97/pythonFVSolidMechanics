@@ -2,14 +2,13 @@
 
 import numpy as np
 
-
 class dim:
 
     # nx = input(("Enter nx: "))
     # ny = input(("Enter ny: "))
 	nx = 20
+	nx = 20
 	ny = 4
-
 
 class index(dim):
     def __init__(self, k):
