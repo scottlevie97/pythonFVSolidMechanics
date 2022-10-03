@@ -42,3 +42,14 @@ Before using these notebooks install the necessary dependencies by running the l
 
 ## Acknowledgements 
 
+Financial support is gratefully acknowledged from the Irish Research Council through the Laureate programme, grant number IRCLA/2017/45
+
+Additionally, the authors want to acknowledge project affiliates, Bekaert, through the Bekaert University Technology Centre (UTC) at UCD (www.ucd.ie/bekaert), and I-Form, funded by Science Foundation Ireland (SFI) Grant Number 16/RC/3872, co-funded under European Regional Development Fund and by I-Form industry partners.
+
+<center>
+<img src="lesson_notebooks/Paper_Images/Readme/iform.png" style="height: 50px"/>
+<img src="lesson_notebooks/Paper_Images/Readme/irc.jpg" style="height: 50px"/>
+<img src="lesson_notebooks/Paper_Images/Readme/sfc.jpg" style="height: 50px"/>
+</center>
+
+
