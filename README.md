@@ -4,10 +4,21 @@
 
 Host [website](https://scottlevie97.github.io/pythonFVSolidMechanics/) for finite volume solid mechanics eductional framework by Scott Levie. 
 
+This learning framework is a set of Jupyter notebooks that provide an guide for building a Finite Volume Solid Mechanics solver while giving an in-depth explanation of the theory used through-out.  
+
+## Characteristics of the Solver
+
+- Linear elastic solids
+- Segregated solution algorithm
+- Structured mesh for rectangular geometry
+
+<img src="lesson_notebooks/Paper_Images//sigmaxx.png"  style="width: 600px;"/>
+
+
 ## List of notebooks:
 
 - [Notebook 1: Defining Mesh](https://nbviewer.org/github/scottlevie97/pythonFVSolidMechanics/blob/new-release/lesson_notebooks/_01_Defining_Mesh.ipynb?flush_cache=true)
-- [Notebook 2: Derivation & Discretistion](https://nbviewer.org/github/scottlevie97/pythonFVSolidMechanics/blob/new-release/lesson_notebooks/_02_Derivation_Discretistion.ipynb?flush_cache=true)
+- [Notebook 2: Derivation & Discretisation](https://nbviewer.org/github/scottlevie97/pythonFVSolidMechanics/blob/new-release/lesson_notebooks/_02_Derivation_Discretistion.ipynb?flush_cache=true)
 - [Notebook 3: Internal Cells](https://nbviewer.org/github/scottlevie97/pythonFVSolidMechanics/blob/new-release/lesson_notebooks/_03_Internal_Cells.ipynb?flush_cache=true)
 - [Notebook 4: Fixed Displacement BCs](https://nbviewer.org/github/scottlevie97/pythonFVSolidMechanics/blob/new-release/lesson_notebooks/_04_Fixed_Displacement_BCs.ipynb?flush_cache=true)
 - [Notebook 5: Fixed Traction BCs](https://nbviewer.org/github/scottlevie97/pythonFVSolidMechanics/blob/new-release/lesson_notebooks/_05_Fixed_Traction_BCs.ipynb?flush_cache=true)
