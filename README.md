@@ -40,4 +40,5 @@ You will need python3 and jupyter installed.
 
 Before using these notebooks install the necessary dependencies by running the lesson_notebooks/Dependencies.ipynb notebook.
 
+## Acknowledgements 
 
