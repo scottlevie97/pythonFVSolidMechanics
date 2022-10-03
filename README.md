@@ -6,19 +6,19 @@ Host [website](https://scottlevie97.github.io/pythonFVSolidMechanics/) for finit
 
 ## List of notebooks:
 
-- [Notebook 1: Defining Mesh](https://nbviewer.org/github/scottlevie97/pythonFVSolidMechanics/blob/newBoundaryConditions/seperate_notebooks/_01_Defining_Mesh.ipynb?flush_cache=true)
-- [Notebook 2: Derivation & Discretistion](https://nbviewer.org/github/scottlevie97/pythonFVSolidMechanics/blob/newBoundaryConditions/seperate_notebooks/_02_Derivation_Discretistion.ipynb?flush_cache=true)
-- [Notebook 3: Internal Cells](https://nbviewer.org/github/scottlevie97/pythonFVSolidMechanics/blob/newBoundaryConditions/seperate_notebooks/_03_Internal_Cells.ipynb?flush_cache=true)
-- [Notebook 4: Fixed Displacement BCs](https://nbviewer.org/github/scottlevie97/pythonFVSolidMechanics/blob/newBoundaryConditions/seperate_notebooks/_04_Fixed_Displacement_BCs.ipynb?flush_cache=true)
-- [Notebook 5: Fixed Traction BCs](https://nbviewer.org/github/scottlevie97/pythonFVSolidMechanics/blob/newBoundaryConditions/seperate_notebooks/_05_Fixed_Traction_BCs.ipynb?flush_cache=true)
-- [Notebook 6: Solution Algorithm](https://nbviewer.org/github/scottlevie97/pythonFVSolidMechanics/blob/newBoundaryConditions/seperate_notebooks/_06_Solution_Algorithm.ipynb?flush_cache=true)
-- [Notebook 7: Time Loop](https://nbviewer.org/github/scottlevie97/pythonFVSolidMechanics/blob/newBoundaryConditions/seperate_notebooks/_07_Time_Loop.ipynb?flush_cache=true)
-- [Notebook 8: Post-Processing](https://nbviewer.org/github/scottlevie97/pythonFVSolidMechanics/blob/newBoundaryConditions/seperate_notebooks/_08_Post-Processing.ipynb?flush_cache=true)
+- [Notebook 1: Defining Mesh](https://nbviewer.org/github/scottlevie97/pythonFVSolidMechanics/blob/new-release/seperate_notebooks/_01_Defining_Mesh.ipynb?flush_cache=true)
+- [Notebook 2: Derivation & Discretistion](https://nbviewer.org/github/scottlevie97/pythonFVSolidMechanics/blob/new-release/seperate_notebooks/_02_Derivation_Discretistion.ipynb?flush_cache=true)
+- [Notebook 3: Internal Cells](https://nbviewer.org/github/scottlevie97/pythonFVSolidMechanics/blob/new-release/seperate_notebooks/_03_Internal_Cells.ipynb?flush_cache=true)
+- [Notebook 4: Fixed Displacement BCs](https://nbviewer.org/github/scottlevie97/pythonFVSolidMechanics/blob/new-release/seperate_notebooks/_04_Fixed_Displacement_BCs.ipynb?flush_cache=true)
+- [Notebook 5: Fixed Traction BCs](https://nbviewer.org/github/scottlevie97/pythonFVSolidMechanics/blob/new-release/seperate_notebooks/_05_Fixed_Traction_BCs.ipynb?flush_cache=true)
+- [Notebook 6: Solution Algorithm](https://nbviewer.org/github/scottlevie97/pythonFVSolidMechanics/blob/new-release/seperate_notebooks/_06_Solution_Algorithm.ipynb?flush_cache=true)
+- [Notebook 7: Time Loop](https://nbviewer.org/github/scottlevie97/pythonFVSolidMechanics/blob/new-release/seperate_notebooks/_07_Time_Loop.ipynb?flush_cache=true)
+- [Notebook 8: Post-Processing](https://nbviewer.org/github/scottlevie97/pythonFVSolidMechanics/blob/new-release/seperate_notebooks/_08_Post-Processing.ipynb?flush_cache=true)
 
 Run notebooks online using binder:
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/git/https%3A%2F%2Fgithub.com%2Fscottlevie97%2FpythonFVSolidMechanics/newBoundaryConditions?labpath=seperate_notebooks)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/git/https%3A%2F%2Fgithub.com%2Fscottlevie97%2FpythonFVSolidMechanics/new-release?labpath=seperate_notebooks)
 
-[Binder](https://mybinder.org/v2/gh/scottlevie97/pythonFVSolidMechanics/newBoundaryConditions?labpath=seperate_notebooks)
+[Binder](https://mybinder.org/v2/gh/scottlevie97/pythonFVSolidMechanics/new-release?labpath=seperate_notebooks)
 
 [Github repo](https://github.com/scottlevie97/pythonFVSolidMechanics) 
