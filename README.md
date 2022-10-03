@@ -12,7 +12,7 @@ This learning framework is a set of Jupyter notebooks that provide an guide for 
 - Segregated solution algorithm
 - Structured mesh for rectangular geometry
 
-<img src="lesson_notebooks/Paper_Images/sigmaxx.png"  style="width: 600px"/>
+![Image](lesson_notebooks/Paper_Images/sigmaxx.png)
 
 ## List of notebooks:
 
