@@ -13,7 +13,7 @@ This learning framework is a set of Jupyter notebooks that provide an guide for 
 - Structured mesh for rectangular geometry
 - Fixed displacement or traction boundary conditions
 
-![Image](lesson_notebooks/Paper_Images/sigmaxx.png)
+![Image](lesson_notebooks/paper_images/sigmaxx.png)
 
 ## List of notebooks:
 
@@ -47,9 +47,9 @@ Financial support is gratefully acknowledged from the Irish Research Council thr
 Additionally, the authors want to acknowledge project affiliates, Bekaert, through the Bekaert University Technology Centre (UTC) at UCD (www.ucd.ie/bekaert), and I-Form, funded by Science Foundation Ireland (SFI) Grant Number 16/RC/3872, co-funded under European Regional Development Fund and by I-Form industry partners.
 
 <center>
-<img src="lesson_notebooks/Paper_Images/Readme/iform.png" style="height: 50px"/>
-<img src="lesson_notebooks/Paper_Images/Readme/irc.jpg" style="height: 50px"/>
-<img src="lesson_notebooks/Paper_Images/Readme/sfc.jpg" style="height: 50px"/>
+<img src="lesson_notebooks/paper_images/Readme/iform.png" style="height: 50px"/>
+<img src="lesson_notebooks/paper_images/Readme/irc.jpg" style="height: 50px"/>
+<img src="lesson_notebooks/paper_images/Readme/sfc.jpg" style="height: 50px"/>
 </center>
 
 
