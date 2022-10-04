@@ -37,22 +37,22 @@ class boundaryCellTraction(boundaryCellDisplacement, A):
             uv = "u"
 
         N_term =(
-                    Sfy*A.coef(xy, "N", uv)*(
+                    + Sfy*A.coef(xy, "N", uv)*(
                     (boundaryCellTraction.corner(boundaries, "NE", uv, U_previous, k) - boundaryCellTraction.corner(boundaries, "NW", uv, U_previous, k))
                     /dx)
                 )
         S_term =(
-                    Sfy*A.coef(xy, "S", uv)*(
+                    - Sfy*A.coef(xy, "S", uv)*(
                         (boundaryCellTraction.corner(boundaries, "SE", uv, U_previous, k) - boundaryCellTraction.corner(boundaries, "SW", uv, U_previous, k))
                         /dx)
                 ) 
         E_term =(
-                    Sfx*A.coef(xy, "E", uv)*(
+                    + Sfx*A.coef(xy, "E", uv)*(
                         (boundaryCellTraction.corner(boundaries, "NE", uv, U_previous, k) - boundaryCellTraction.corner(boundaries, "SE", uv, U_previous, k))
                         /dy)
                 ) 
         W_term =(
-                    Sfx*A.coef(xy, "W", uv)*(
+                    - Sfx*A.coef(xy, "W", uv)*(
                         (boundaryCellTraction.corner(boundaries, "NW", uv, U_previous, k) - boundaryCellTraction.corner(boundaries, "SW", uv, U_previous, k))
                         /dy)
                 )
