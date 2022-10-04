@@ -26,8 +26,8 @@ class boundaryCellTraction(boundaryCellDisplacement, A):
             self.a_P = self.a_N + self.a_S + self.a_E + self.a_W
 
 
-    def b_temp(U_old, U_old_old, k, xy):      
-        return A.b_temp(U_old, U_old_old, k, xy)
+    def b_temporal(U_old, U_old_old, k, xy):      
+        return A.b_temporal(U_old, U_old_old, k, xy)
     
     def b_diff(boundaries, k, xy, U_previous):
 
@@ -144,7 +144,7 @@ def traction_cell_BCs_A(A_matrix, k, boundaries, xy):
 def traction_cell_BCs_b(b_matrix, k, boundaries, xy, U_old, U_old_old, U_previous, ):
 
     b_matrix[k] =(
-                    boundaryCellTraction.b_temp(U_old, U_old_old, k, xy)
+                    boundaryCellTraction.b_temporal(U_old, U_old_old, k, xy)
                     +
                     boundaryCellTraction.b_diff(boundaries, k, xy, U_previous, )  
                 )    

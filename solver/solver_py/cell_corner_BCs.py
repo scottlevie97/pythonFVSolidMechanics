@@ -253,7 +253,7 @@ def cell_corner_BCs_b(b_matrix, k, boundaries, xy, U_previous, U_old, U_old_old)
 
 
     b_matrix[k] =(
-            A.b_temp(U_old, U_old_old, k, xy)
+            A.b_temporal(U_old, U_old_old, k, xy)
             +
             b_diff(boundaries, k, xy, U_previous)
         )  

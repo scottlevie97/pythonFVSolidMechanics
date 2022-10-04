@@ -142,7 +142,7 @@ def boundary_conditions_b(b_matrix, U_previous, U_old, U_old_old, xy):
         else:
 
             b_matrix[k] = (
-                            A.b_temp(U_old, U_old_old, k, xy)
+                            A.b_temporal(U_old, U_old_old, k, xy)
                             +
                             A.b_force(k, xy, U_previous)
                         )

@@ -40,7 +40,7 @@ class A(index, displacement):
         return A_no_boundary
 
     # b temporal term
-    def b_temp(U_old, U_old_old, k, xy):
+    def b_temporal(U_old, U_old_old, k, xy):
 
         if xy == "x":
             if transient:

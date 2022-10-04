@@ -24,8 +24,8 @@ class boundaryCellDisplacement(A):
         self.a_E = A(xy).a_E*sw_E
         self.a_W = A(xy).a_W*sw_W
 
-    def b_temp(U_old, U_old_old, k, xy): 
-        return A.b_temp(U_old, U_old_old, k, xy)
+    def b_temporal(U_old, U_old_old, k, xy): 
+        return A.b_temporal(U_old, U_old_old, k, xy)
     
     def b_diff(boundaries, k, xy, U_previous):
 
@@ -130,7 +130,7 @@ def displacement_cell_BCs_A(A_matrix, k, boundaries, xy, U_old, U_old_old, U_pre
 def displacement_cell_BCs_b(b_matrix, k, boundaries, xy, U_old, U_old_old, U_previous):
 
     b_matrix[k] =(
-                boundaryCellDisplacement.b_temp(U_old, U_old_old, k, xy)
+                boundaryCellDisplacement.b_temporal(U_old, U_old_old, k, xy)
                 +
                 boundaryCellDisplacement.b_diff(boundaries, k, xy, U_previous)
             )   
@@ -159,7 +159,7 @@ def displacement_cell_BCs_A(A_matrix, k, boundaries, xy, U_old, U_old_old, U_pre
 def displacement_cell_BCs_b(b_matrix, k, boundaries, xy, U_old, U_old_old, U_previous):
 
     b_matrix[k] =(
-                boundaryCellDisplacement.b_temp(U_old, U_old_old, k, xy)
+                boundaryCellDisplacement.b_temporal(U_old, U_old_old, k, xy)
                 +
                 boundaryCellDisplacement.b_diff(boundaries, k, xy, U_previous)
             )   
