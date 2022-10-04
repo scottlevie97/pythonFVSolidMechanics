@@ -85,30 +85,38 @@ class boundaryCellTraction(boundaryCellDisplacement, A):
 
         disp = displacement(k, U_previous, uv_i)
 
+        linearExtrapolate = boundaryCellTraction.linearExtrapolate
+
         for boundary in boundaries:
             if (boundary == "b") & (corner_placement == "SE"):
-                corner =  (1/2)*( ((3/2)*disp.E - (1/2)*disp.NE) + ((3/2)*disp.P - (1/2)*disp.N))
+                corner =  (1/2)*( linearExtrapolate(disp.E, disp.NE) + linearExtrapolate(disp.P, disp.N))
             elif (boundary == "b") & (corner_placement == "SW"):
-                corner =  (1/2)*( ((3/2)*disp.W - (1/2)*disp.NW) + ((3/2)*disp.P - (1/2)*disp.N))            
+                corner =  (1/2)*( linearExtrapolate(disp.W, disp.NW) + linearExtrapolate(disp.P, disp.N))            
 
             elif (boundary == "t") & (corner_placement == "NE"):
-                corner =  (1/2)*( ((3/2)*disp.E - (1/2)*disp.SE) + ((3/2)*disp.P - (1/2)*disp.S))
+                corner =  (1/2)*( linearExtrapolate(disp.E, disp.SE) + linearExtrapolate(disp.P, disp.S))
             elif (boundary == "t") & (corner_placement == "NW"):
-                corner =  (1/2)*( ((3/2)*disp.W - (1/2)*disp.SW) + ((3/2)*disp.P - (1/2)*disp.S))
+                corner =  (1/2)*( linearExtrapolate(disp.W, disp.SW) + linearExtrapolate(disp.P, disp.S))
 
             elif (boundary == "l") & (corner_placement == "NW"):
-                corner =  (1/2)*( ((3/2)*disp.N - (1/2)*disp.NE) + ((3/2)*disp.P - (1/2)*disp.E))
+                corner =  (1/2)*( linearExtrapolate(disp.N, disp.NE) + linearExtrapolate(disp.P, disp.E))
             elif (boundary == "l") & (corner_placement == "SW"):
-                corner =  (1/2)*( ((3/2)*disp.S - (1/2)*disp.SE) + ((3/2)*disp.P - (1/2)*disp.E))
+                corner =  (1/2)*( linearExtrapolate(disp.S, disp.SE) + linearExtrapolate(disp.P, disp.E))
 
             elif (boundary == "r") & (corner_placement == "NE"):
-                corner =  (1/2)*( ((3/2)*disp.N - (1/2)*disp.NW) + ((3/2)*disp.P - (1/2)*disp.W))
+                corner =  (1/2)*( linearExtrapolate(disp.N, disp.NW) + linearExtrapolate(disp.P, disp.W))
             elif (boundary == "r") & (corner_placement == "SE"):
-                corner =  (1/2)*( ((3/2)*disp.S - (1/2)*disp.SW) + ((3/2)*disp.P - (1/2)*disp.W))
+                corner =  (1/2)*( linearExtrapolate(disp.S, disp.SW) + linearExtrapolate(disp.P, disp.W))
 
             else: corner = A.corner(corner_placement, uv, U_previous, k)
         
         return corner
+
+    def linearExtrapolate(onBoundary, neighbouringBoundary):
+
+        extrapolation = (3/2)*onBoundary - (1/2)*neighbouringBoundary
+        
+        return extrapolation
 
 
 def traction_cell_BCs_A(A_matrix, k, boundaries, xy):
