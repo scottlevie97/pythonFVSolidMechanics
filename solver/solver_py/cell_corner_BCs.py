@@ -198,7 +198,7 @@ def cell_corner_BCs_b(b_matrix, k, boundaries, xy, U_previous, U_old, U_old_old)
         def N_term():
 
             if (boundaries[0] != "t") | ((boundaries[0] == "t") & (BC_settings("t").fixed_displacement)):
-                N_term = Sfy*A.coef(xy, "N", uv)*(
+                N_term = + Sfy*A.coef(xy, "N", uv)*(
                     (cornercorner(boundaries, "NE", uv, U_previous, k) - cornercorner(boundaries, "NW", uv, U_previous, k))
                     /dx)
 
@@ -211,7 +211,7 @@ def cell_corner_BCs_b(b_matrix, k, boundaries, xy, U_previous, U_old, U_old_old)
         def S_term():
 
             if (boundaries[0] != "b") | ((boundaries[0] == "b") & (BC_settings("b").fixed_displacement)):
-                S_term = Sfy*A.coef(xy, "S", uv)*(
+                S_term = - Sfy*A.coef(xy, "S", uv)*(
                     (cornercorner(boundaries, "SE", uv, U_previous, k) - cornercorner(boundaries, "SW", uv, U_previous, k))
                     /dx)
 
@@ -224,7 +224,7 @@ def cell_corner_BCs_b(b_matrix, k, boundaries, xy, U_previous, U_old, U_old_old)
         def E_term():
 
             if (boundaries[1] != "r") | ((boundaries[1] == "r") & (BC_settings("r").fixed_displacement)):
-                E_term = Sfx*A.coef(xy, "E", uv)*(
+                E_term = + Sfx*A.coef(xy, "E", uv)*(
                             (cornercorner(boundaries, "NE", uv, U_previous, k) - cornercorner(boundaries, "SE", uv, U_previous, k))
                             /dy)
                 
@@ -237,7 +237,7 @@ def cell_corner_BCs_b(b_matrix, k, boundaries, xy, U_previous, U_old, U_old_old)
         def W_term():
 
             if (boundaries[1] != "l") | ((boundaries[1] == "l") & (BC_settings("l").fixed_displacement)):
-                W_term = Sfx*A.coef(xy, "W", uv)*(
+                W_term = - Sfx*A.coef(xy, "W", uv)*(
                 (cornercorner(boundaries, "NW", uv, U_previous, k) - cornercorner(boundaries, "SW", uv, U_previous, k))
                 /dy)
 

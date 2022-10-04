@@ -241,26 +241,26 @@ def addBoundaryDisplacements(U_field):
     # Bottom Left:
     xcoord = 0
     ycoord = ny+1
-    U_with_boundaries[ycoord, xcoord] = linearExtrapolate(U_with_boundaries[ycoord -1, xcoord +1], (1/2)*U_with_boundaries[ycoord -2, xcoord +2]) 
-    V_with_boundaries[ycoord, xcoord] = linearExtrapolate(V_with_boundaries[ycoord -1, xcoord +1], (1/2)*V_with_boundaries[ycoord -2, xcoord +2]) 
+    U_with_boundaries[ycoord, xcoord] = linearExtrapolate(U_with_boundaries[ycoord -1, xcoord +1], U_with_boundaries[ycoord -2, xcoord +2]) 
+    V_with_boundaries[ycoord, xcoord] = linearExtrapolate(V_with_boundaries[ycoord -1, xcoord +1], V_with_boundaries[ycoord -2, xcoord +2]) 
 
     # Bottom Right:
     xcoord = nx+1
     ycoord = ny+1
-    U_with_boundaries[ycoord, xcoord] = linearExtrapolate(U_with_boundaries[ycoord -1, xcoord -1], (1/2)*U_with_boundaries[ycoord -2, xcoord -2]) 
-    V_with_boundaries[ycoord, xcoord] = linearExtrapolate(V_with_boundaries[ycoord -1, xcoord -1], (1/2)*V_with_boundaries[ycoord -2, xcoord -2]) 
+    U_with_boundaries[ycoord, xcoord] = linearExtrapolate(U_with_boundaries[ycoord -1, xcoord -1], U_with_boundaries[ycoord -2, xcoord -2]) 
+    V_with_boundaries[ycoord, xcoord] = linearExtrapolate(V_with_boundaries[ycoord -1, xcoord -1], V_with_boundaries[ycoord -2, xcoord -2]) 
 
     # Top Left:
     xcoord = 0
     ycoord = 0
-    U_with_boundaries[ycoord, xcoord] = linearExtrapolate(U_with_boundaries[ycoord +1, xcoord +1], (1/2)*U_with_boundaries[ycoord +2, xcoord +2]) 
-    V_with_boundaries[ycoord, xcoord] = linearExtrapolate(V_with_boundaries[ycoord +1, xcoord +1], (1/2)*V_with_boundaries[ycoord +2, xcoord +2]) 
+    U_with_boundaries[ycoord, xcoord] = linearExtrapolate(U_with_boundaries[ycoord +1, xcoord +1], U_with_boundaries[ycoord +2, xcoord +2]) 
+    V_with_boundaries[ycoord, xcoord] = linearExtrapolate(V_with_boundaries[ycoord +1, xcoord +1], V_with_boundaries[ycoord +2, xcoord +2]) 
 
     # Top Right:
     xcoord = nx+1
     ycoord = 0
-    U_with_boundaries[ycoord, xcoord] = linearExtrapolate(U_with_boundaries[ycoord +1, xcoord -1], (1/2)*U_with_boundaries[ycoord +2, xcoord -2]) 
-    V_with_boundaries[ycoord, xcoord] = linearExtrapolate(V_with_boundaries[ycoord +1, xcoord -1], (1/2)*V_with_boundaries[ycoord +2, xcoord -2]) 
+    U_with_boundaries[ycoord, xcoord] = linearExtrapolate(U_with_boundaries[ycoord +1, xcoord -1], U_with_boundaries[ycoord +2, xcoord -2]) 
+    V_with_boundaries[ycoord, xcoord] = linearExtrapolate(V_with_boundaries[ycoord +1, xcoord -1], V_with_boundaries[ycoord +2, xcoord -2]) 
 
     return U_with_boundaries, V_with_boundaries
 

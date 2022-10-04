@@ -14,9 +14,9 @@ class A(index, displacement):
             uv = "v"
 
         self.a_N = + A.coef(xy, "N", uv)*(Sfy)/dy
-        self.a_S = - A.coef(xy, "S", uv)*(Sfy)/dy
+        self.a_S = + A.coef(xy, "S", uv)*(Sfy)/dy
         self.a_E = + A.coef(xy, "E", uv)*(Sfx)/dx
-        self.a_W = - A.coef(xy, "W", uv)*(Sfx)/dx
+        self.a_W = + A.coef(xy, "W", uv)*(Sfx)/dx
 
         if transient:
             self.a_P = (rho*dx*dy/(dt**2)) + self.a_N + self.a_S + self.a_E + self.a_W
@@ -67,7 +67,7 @@ class A(index, displacement):
                                 Sfy*A.coef(xy, "N", uv)*(
                                     (A.corner("NE", uv, U_previous, k) - A.corner("NW", uv, U_previous, k))
                                     /dx)
-                                + 
+                                - 
                                 Sfy*A.coef(xy, "S", uv)*(
                                     (A.corner("SE", uv, U_previous, k) - A.corner("SW", uv, U_previous, k))
                                     /dx)
@@ -75,7 +75,7 @@ class A(index, displacement):
                                 Sfx*A.coef(xy, "E", uv)*(
                                     (A.corner("NE", uv, U_previous, k) - A.corner("SE", uv, U_previous, k))
                                     /dy)
-                                +
+                                -
                                 Sfx*A.coef(xy, "W", uv)*(
                                     (A.corner("NW", uv, U_previous, k) - A.corner("SW", uv, U_previous, k))
                                     /dy)
@@ -103,49 +103,34 @@ class A(index, displacement):
 
     
     def coef(xy, face, uv):
-        # could have and statements
+    # could have and statements
+
+        coef = np.zeros((2,2,2))
+        # i = E/W, N/S
+        # j = u, v
+        # k = x, y 
+
+        coef[0,0,0] =  2*mu_ + lambda_      # E/W, u, x
+        coef[0,0,1] =  mu_                  # E/W, u, y
+        coef[0,1,0] =  lambda_              # E/W, v, x            
+        coef[0,1,1] =  mu_                  # E/W, v, y
+        coef[1,0,0] =  mu_                  # N/S, u, x
+        coef[1,0,1] =  lambda_              # N/S, u, y
+        coef[1,1,0] =  mu_                  # N/S, v, x            
+        coef[1,1,1] =  2*mu_ + lambda_      # N/S, v, y
+
+        if (face == "E") | ((face == "W")):
+            i = 0
+        elif (face == "N") | ((face == "S")):
+            i = 1
+        if uv == "u":
+            j = 0
+        elif uv == "v":
+            j = 1
         if xy == "x":
-            if face == "N":
-                if uv == "u":
-                    return mu_
-                if uv == "v":
-                    return mu_
-            if face == "S":
-                if uv == "u":
-                    return - mu_
-                if uv == "v":
-                    return - mu_
-            if face == "E":
-                if uv == "u":
-                    return 2*mu_ + lambda_
-                if uv == "v":
-                    return lambda_
-            if face == "W":
-                if uv == "u":
-                    return - (2*mu_ + lambda_)
-                if uv == "v":
-                    return - lambda_
-
+            k = 0
         elif xy == "y":
-            if face == "N":
-                if uv == "u":
-                    return lambda_
-                if uv == "v":
-                    return 2*mu_ + lambda_
-            if face == "S":
-                if uv == "u":
-                    return - lambda_
-                if uv == "v":
-                    return - (2*mu_ + lambda_)
-            if face == "E":
-                if uv == "u":
-                    return mu_
-                if uv == "v":
-                    return mu_
-            if face == "W":
-                if uv == "u":
-                    return - mu_
-                if uv == "v":
-                    return - mu_
+            k = 1
 
+        return coef[i,j,k]
 
