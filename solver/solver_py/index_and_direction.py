@@ -2,8 +2,8 @@ import numpy as np
 
 class dim:
 
-	nx = 40
-	ny = 4
+	nx = 80
+	ny = 8
 
 class index(dim):
     def __init__(self, k):
