@@ -1,0 +1,33 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | foam-extend: Open Source CFD                    |
+|  \\    /   O peration     | Version:     4.0                                |
+|   \\  /    A nd           | Web:         http://www.foam-extend.org         |
+|    \\/     M anipulation  | For copyright notice see file Copyright         |
+\*---------------------------------------------------------------------------*/
+Build    : 4.0-268bb07d15d8
+Exec     : blockMesh
+Date     : Oct 07 2022
+Time     : 12:47:10
+Host     : simon-System-Product-Name
+PID      : 212425
+CtrlDict : "/home/scottlevie/foam/scottlevie-4.0/pythonFVSolidMechanics/extra/mesh-sensitivity/solids4foam/160segregatedCantilever2d/system/controlDict"
+Case     : /home/scottlevie/foam/scottlevie-4.0/pythonFVSolidMechanics/extra/mesh-sensitivity/solids4foam/160segregatedCantilever2d
+nProcs   : 1
+SigFpe   : Enabling floating point exception trapping (FOAM_SIGFPE).
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+
+
+--> FOAM FATAL ERROR: 
+Cannot open mesh description file
+    "/home/scottlevie/foam/scottlevie-4.0/pythonFVSolidMechanics/extra/mesh-sensitivity/solids4foam/160segregatedCantilever2d/constant/polyMesh/blockMeshDict"
+
+
+    From function blockMesh
+    in file blockMeshApp.C at line 143.
+
+FOAM exiting
+
