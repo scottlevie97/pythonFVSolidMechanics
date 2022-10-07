@@ -1,33 +1,93 @@
 /*---------------------------------------------------------------------------*\
 | =========                 |                                                 |
-| \\      /  F ield         | foam-extend: Open Source CFD                    |
-|  \\    /   O peration     | Version:     4.0                                |
-|   \\  /    A nd           | Web:         http://www.foam-extend.org         |
-|    \\/     M anipulation  | For copyright notice see file Copyright         |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  v1912                                 |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
 \*---------------------------------------------------------------------------*/
-Build    : 4.0-268bb07d15d8
-Exec     : blockMesh
-Date     : Oct 07 2022
-Time     : 12:47:10
-Host     : simon-System-Product-Name
-PID      : 212425
-CtrlDict : "/home/scottlevie/foam/scottlevie-4.0/pythonFVSolidMechanics/extra/mesh-sensitivity/solids4foam/160segregatedCantilever2d/system/controlDict"
-Case     : /home/scottlevie/foam/scottlevie-4.0/pythonFVSolidMechanics/extra/mesh-sensitivity/solids4foam/160segregatedCantilever2d
-nProcs   : 1
-SigFpe   : Enabling floating point exception trapping (FOAM_SIGFPE).
+Build  : _f3950763fe-20191219 OPENFOAM=1912
+Arch   : "LSB;label=32;scalar=64"
+Exec   : blockMesh
+Date   : Oct 07 2022
+Time   : 13:54:24
+Host   : Levie-Laptop
+PID    : 11902
+I/O    : uncollated
+Case   : /home/scottlevie/newPythonSolver/migratetogithub/pythonFVSolidMechanics/extra/mesh-sensitivity/solids4foam/160segregatedCantilever2d
+nProcs : 1
+trapFpe: Floating point exception trapping enabled (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 Create time
 
+--> FOAM Warning : 
+    From function static Foam::IOstreamOption::compressionType Foam::IOstreamOption::compressionEnum(const Foam::word&)
+    in file db/IOstreams/IOstreams/IOstreamOption.C at line 88
+    Unknown compression specifier 'uncompressed', assuming no compression
+Creating block mesh from "system/blockMeshDict"
+--> FOAM IOWarning :
+    Found [v1012] 'convertToMeters' entry instead of 'scale' in dictionary "/home/scottlevie/newPythonSolver/migratetogithub/pythonFVSolidMechanics/extra/mesh-sensitivity/solids4foam/160segregatedCantilever2d/system/blockMeshDict" 
+
+    This keyword is deemed to be 108 months old.
+
+Creating block edges
+No non-planar block faces defined
+Creating topology blocks
+Creating topology patches
+
+Reading patches section
+
+Creating block mesh topology
+
+Reading physicalType from existing boundary file
+
+Default patch type set to empty
+
+Check topology
+
+	Basic statistics
+		Number of internal faces : 0
+		Number of boundary faces : 6
+		Number of defined boundary faces : 6
+		Number of undefined boundary faces : 0
+	Checking patch -> block consistency
+
+Creating block offsets
+Creating merge list...
+Deleting polyMesh directory "constant/polyMesh"
+
+Creating polyMesh from blockMesh
+Creating patches
+Creating cells
+Creating points with scale 1
+    Block 0 cell size :
+        i : 0.0125 .. 0.0125
+        j : 0.00625 .. 0.00625
+        k : 1 .. 1
 
 
---> FOAM FATAL ERROR: 
-Cannot open mesh description file
-    "/home/scottlevie/foam/scottlevie-4.0/pythonFVSolidMechanics/extra/mesh-sensitivity/solids4foam/160segregatedCantilever2d/constant/polyMesh/blockMeshDict"
+There are no merge patch pairs
 
+Writing polyMesh with 0 cellZones
+----------------
+Mesh Information
+----------------
+  boundingBox: (0 0 0) (2 0.1 1)
+  nPoints: 5474
+  nCells: 2560
+  nFaces: 10416
+  nInternalFaces: 4944
+----------------
+Patches
+----------------
+  patch 0 (start: 4944 size: 160) name: top
+  patch 1 (start: 5104 size: 16) name: left
+  patch 2 (start: 5120 size: 16) name: right
+  patch 3 (start: 5136 size: 160) name: bottom
+  patch 4 (start: 5296 size: 2560) name: front
+  patch 5 (start: 7856 size: 2560) name: back
 
-    From function blockMesh
-    in file blockMeshApp.C at line 143.
-
-FOAM exiting
+End
 
