@@ -1,0 +1,71 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | foam-extend: Open Source CFD                    |
+|  \\    /   O peration     | Version:     4.0                                |
+|   \\  /    A nd           | Web:         http://www.foam-extend.org         |
+|    \\/     M anipulation  | For copyright notice see file Copyright         |
+\*---------------------------------------------------------------------------*/
+Build    : 4.0-268bb07d15d8
+Exec     : solids4Foam
+Date     : Oct 07 2022
+Time     : 16:18:07
+Host     : simon-System-Product-Name
+PID      : 244289
+CtrlDict : "/home/scottlevie/foam/scottlevie-4.0/pythonFVSolidMechanics/extra/mesh-sensitivity/solids4foam/640coupledCantilever2d/system/controlDict"
+Case     : /home/scottlevie/foam/scottlevie-4.0/pythonFVSolidMechanics/extra/mesh-sensitivity/solids4foam/640coupledCantilever2d
+nProcs   : 1
+SigFpe   : Enabling floating point exception trapping (FOAM_SIGFPE).
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+/*---------------------------------------------------------------------------*\
+|    For further information on the solids4Foam toolbox implementations,      |
+|    please see the following publications:                                   |
+|                                                                             |
+|    P. Cardiff, A Karac, P. De Jaeger, H. Jasak, J. Nagy, A. Ivankovic,      |
+|    Z. Tukovic: An open-source finite volume toolbox for solid mechanics and |
+|    fluid-solid interaction simulations. arXiv:1808.10736v2, 2018, available |
+|    at https://arxiv.org/abs/1808.10736.                                     |
+|                                                                             |
+|    Z. Tukovic, A. Karac, P. Cardiff, H. Jasak, A. Ivankovic: OpenFOAM       |
+|    finite volume solver for fluid-solid interaction.  Transactions of       |
+|    Famena, 42 (3), pp. 1-31, 2018, 10.21278/TOF.42301.                      |
+\*---------------------------------------------------------------------------*/
+
+Selecting physicsModel solid
+
+Selecting solidModel coupledUnsLinearGeometryLinearElastic
+Selecting dynamicFvMesh staticFvMesh
+Patch top    Traction boundary field 
+Patch right    Traction boundary field 
+Patch bottom    Traction boundary field 
+    under-relaxation method: fixed
+
+/*---------------------------------------------------------------------------*\
+|    For further information on this class, please see the following          |
+|    publication:                                                             |
+|                                                                             |
+|    P. Cardiff, Z. Tukovic, H, Jasak, A. Ivankovic: A block-coupled finite   |
+|    volume methodology for linear elasticity and unstructured meshes.        |
+|    Computers and Structures, 2016, 175 100-122,                             |
+|    DOI: 10.1016/-j.compstruc.2016.07.004.                                   |
+\*---------------------------------------------------------------------------*/
+
+Creating the mechanicalModel
+Selecting mechanical law linearElastic
+Time = 1
+
+Evolving solid solver
+Solving the momentum equation for D
+EigenSolver : writeMatlabFiles is false
+EigenSparseLU Eigen linear solver
+Max epsilonEq = 0.000479284
+Max sigmaEq (von Mises stress) = 1.10604e+08
+ExecutionTime = 6.79 s  ClockTime = 8 s
+
+The momentum equation converged in all time-steps
+
+
+End
+
