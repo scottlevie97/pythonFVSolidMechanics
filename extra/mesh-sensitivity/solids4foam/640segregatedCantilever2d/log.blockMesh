@@ -8,9 +8,9 @@
 Build    : 4.0-268bb07d15d8
 Exec     : blockMesh
 Date     : Oct 07 2022
-Time     : 12:44:50
+Time     : 16:24:13
 Host     : simon-System-Product-Name
-PID      : 211300
+PID      : 246824
 CtrlDict : "/home/scottlevie/foam/scottlevie-4.0/pythonFVSolidMechanics/extra/mesh-sensitivity/solids4foam/640segregatedCantilever2d/system/controlDict"
 Case     : /home/scottlevie/foam/scottlevie-4.0/pythonFVSolidMechanics/extra/mesh-sensitivity/solids4foam/640segregatedCantilever2d
 nProcs   : 1

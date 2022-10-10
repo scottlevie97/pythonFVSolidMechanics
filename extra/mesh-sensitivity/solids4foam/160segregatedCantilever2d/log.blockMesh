@@ -1,39 +1,29 @@
 /*---------------------------------------------------------------------------*\
 | =========                 |                                                 |
-| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
-|  \\    /   O peration     | Version:  v1912                                 |
-|   \\  /    A nd           | Website:  www.openfoam.com                      |
-|    \\/     M anipulation  |                                                 |
+| \\      /  F ield         | foam-extend: Open Source CFD                    |
+|  \\    /   O peration     | Version:     4.0                                |
+|   \\  /    A nd           | Web:         http://www.foam-extend.org         |
+|    \\/     M anipulation  | For copyright notice see file Copyright         |
 \*---------------------------------------------------------------------------*/
-Build  : _f3950763fe-20191219 OPENFOAM=1912
-Arch   : "LSB;label=32;scalar=64"
-Exec   : blockMesh
-Date   : Oct 07 2022
-Time   : 13:54:24
-Host   : Levie-Laptop
-PID    : 11902
-I/O    : uncollated
-Case   : /home/scottlevie/newPythonSolver/migratetogithub/pythonFVSolidMechanics/extra/mesh-sensitivity/solids4foam/160segregatedCantilever2d
-nProcs : 1
-trapFpe: Floating point exception trapping enabled (FOAM_SIGFPE).
-fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
-allowSystemOperations : Allowing user-supplied system call operations
+Build    : 4.0-268bb07d15d8
+Exec     : blockMesh
+Date     : Oct 07 2022
+Time     : 16:15:44
+Host     : simon-System-Product-Name
+PID      : 242414
+CtrlDict : "/home/scottlevie/foam/scottlevie-4.0/pythonFVSolidMechanics/extra/mesh-sensitivity/solids4foam/160segregatedCantilever2d/system/controlDict"
+Case     : /home/scottlevie/foam/scottlevie-4.0/pythonFVSolidMechanics/extra/mesh-sensitivity/solids4foam/160segregatedCantilever2d
+nProcs   : 1
+SigFpe   : Enabling floating point exception trapping (FOAM_SIGFPE).
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 Create time
 
---> FOAM Warning : 
-    From function static Foam::IOstreamOption::compressionType Foam::IOstreamOption::compressionEnum(const Foam::word&)
-    in file db/IOstreams/IOstreams/IOstreamOption.C at line 88
-    Unknown compression specifier 'uncompressed', assuming no compression
-Creating block mesh from "system/blockMeshDict"
---> FOAM IOWarning :
-    Found [v1012] 'convertToMeters' entry instead of 'scale' in dictionary "/home/scottlevie/newPythonSolver/migratetogithub/pythonFVSolidMechanics/extra/mesh-sensitivity/solids4foam/160segregatedCantilever2d/system/blockMeshDict" 
 
-    This keyword is deemed to be 108 months old.
+Creating block mesh from
+    "/home/scottlevie/foam/scottlevie-4.0/pythonFVSolidMechanics/extra/mesh-sensitivity/solids4foam/160segregatedCantilever2d/constant/polyMesh/blockMeshDict"
 
-Creating block edges
-No non-planar block faces defined
+Creating curved edges
 Creating topology blocks
 Creating topology patches
 
@@ -55,8 +45,7 @@ Check topology
 	Checking patch -> block consistency
 
 Creating block offsets
-Creating merge list...
-Deleting polyMesh directory "constant/polyMesh"
+Creating merge list .
 
 Creating polyMesh from blockMesh
 Creating patches
@@ -68,9 +57,7 @@ Creating points with scale 1
         k : 1 .. 1
 
 
-There are no merge patch pairs
-
-Writing polyMesh with 0 cellZones
+Writing polyMesh
 ----------------
 Mesh Information
 ----------------

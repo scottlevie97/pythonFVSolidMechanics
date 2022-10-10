@@ -8,9 +8,9 @@
 Build    : 4.0-268bb07d15d8
 Exec     : solids4Foam
 Date     : Oct 07 2022
-Time     : 12:44:50
+Time     : 16:24:15
 Host     : simon-System-Product-Name
-PID      : 211301
+PID      : 246829
 CtrlDict : "/home/scottlevie/foam/scottlevie-4.0/pythonFVSolidMechanics/extra/mesh-sensitivity/solids4foam/640segregatedCantilever2d/system/controlDict"
 Case     : /home/scottlevie/foam/scottlevie-4.0/pythonFVSolidMechanics/extra/mesh-sensitivity/solids4foam/640segregatedCantilever2d
 nProcs   : 1
@@ -692,7 +692,7 @@ setCellDisplacements: reading cellDisplacements
 
 Max epsilonEq = 0.000540916
 Max sigmaEq (von Mises stress) = 1.24827e+08
-ExecutionTime = 3286.93 s  ClockTime = 3289 s
+ExecutionTime = 5708.14 s  ClockTime = 7771 s
 
 The momentum equation converged in all time-steps
 
