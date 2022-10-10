@@ -1,0 +1,80 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | foam-extend: Open Source CFD                    |
+|  \\    /   O peration     | Version:     4.0                                |
+|   \\  /    A nd           | Web:         http://www.foam-extend.org         |
+|    \\/     M anipulation  | For copyright notice see file Copyright         |
+\*---------------------------------------------------------------------------*/
+Build    : 4.0-268bb07d15d8
+Exec     : blockMesh
+Date     : Oct 07 2022
+Time     : 12:44:50
+Host     : simon-System-Product-Name
+PID      : 211300
+CtrlDict : "/home/scottlevie/foam/scottlevie-4.0/pythonFVSolidMechanics/extra/mesh-sensitivity/solids4foam/640segregatedCantilever2d/system/controlDict"
+Case     : /home/scottlevie/foam/scottlevie-4.0/pythonFVSolidMechanics/extra/mesh-sensitivity/solids4foam/640segregatedCantilever2d
+nProcs   : 1
+SigFpe   : Enabling floating point exception trapping (FOAM_SIGFPE).
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+
+Creating block mesh from
+    "/home/scottlevie/foam/scottlevie-4.0/pythonFVSolidMechanics/extra/mesh-sensitivity/solids4foam/640segregatedCantilever2d/constant/polyMesh/blockMeshDict"
+
+Creating curved edges
+Creating topology blocks
+Creating topology patches
+
+Reading patches section
+
+Creating block mesh topology
+
+Reading physicalType from existing boundary file
+
+Default patch type set to empty
+
+Check topology
+
+	Basic statistics
+		Number of internal faces : 0
+		Number of boundary faces : 6
+		Number of defined boundary faces : 6
+		Number of undefined boundary faces : 0
+	Checking patch -> block consistency
+
+Creating block offsets
+Creating merge list .
+
+Creating polyMesh from blockMesh
+Creating patches
+Creating cells
+Creating points with scale 1
+    Block 0 cell size :
+        i : 0.003125 .. 0.003125
+        j : 0.0015625 .. 0.0015625
+        k : 1 .. 1
+
+
+Writing polyMesh
+----------------
+Mesh Information
+----------------
+  boundingBox: (0 0 0) (2 0.1 1)
+  nPoints: 83330
+  nCells: 40960
+  nFaces: 164544
+  nInternalFaces: 81216
+----------------
+Patches
+----------------
+  patch 0 (start: 81216 size: 640) name: top
+  patch 1 (start: 81856 size: 64) name: left
+  patch 2 (start: 81920 size: 64) name: right
+  patch 3 (start: 81984 size: 640) name: bottom
+  patch 4 (start: 82624 size: 40960) name: front
+  patch 5 (start: 123584 size: 40960) name: back
+
+End
+
