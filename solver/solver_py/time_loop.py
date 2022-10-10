@@ -11,8 +11,8 @@ import numpy as np
 import warnings
 warnings.filterwarnings('ignore', '.*do not.*', )
 
-recordResults = False
-plotOngoingResiudalGraph = True
+recordResults = True
+plotOngoingResiudalGraph = False
 
 # How many iterations  ons between plotting residuals
 sampleRate = 200

@@ -6,8 +6,8 @@ Ly = .1
 
 
 #### Mesh Grading ####
-nx = 40      
-ny = 4 
+nx = 640      
+ny = 64 
 
 
 #### Boundary Conditions ####
@@ -98,12 +98,12 @@ dt = 0.01
 
 #### Needs to be moved ####
 
-# def saveDirectory(nx, ny):
-#     return "Solution_rightTraction/x_" + str(nx) + "_y_" + str(ny)
+def saveDirectory(nx, ny):
+    return "/home/scottlevie/foam/scottlevie-4.0/pythonFVSolidMechanics/extra/mesh-sensitivity/pythonSolver/x_" + str(nx) + "_y_" + str(ny)
 
-# def saveArray (name, array): 
+def saveArray (name, array): 
 
-#     pd.DataFrame(array).to_csv(saveDirectory(nx, ny) + "/" + name + ".csv", index=False, header=None)
+    pd.DataFrame(array).to_csv(saveDirectory(nx, ny) + "/" + name + ".csv", index=False, header=None)
 
 
 #### Write settings to another python file####
