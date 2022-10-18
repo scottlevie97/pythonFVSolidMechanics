@@ -1,15 +1,15 @@
-from setup import *
-from index_and_direction import index, displacement
 from A_matrix import A
 from boundaryCellDisplacement import boundaryCellDisplacement
 from boundaryCellTraction import boundaryCellTraction
+from index_and_direction import displacement, index
+from setup import *
 
 # Write a function that reads each corner boundary BC (traction or displacement) and applies the correct a and b terms
 
 #This will take in boundaries array, example: [t,l] -> this means top left corner
 #It will then search BC_settings 
 
-def cell_corner_BCs_A(A_matrix, k, boundaries, xy, U_previous, U_old, U_old_old):
+def cell_corner_BCs_A(A_matrix, k, boundaries, xy):
 
     a_N = A(xy).a_N
     a_S = A(xy).a_S

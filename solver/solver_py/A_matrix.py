@@ -1,5 +1,6 @@
+from index_and_direction import cell_index, displacement, index
 from setup import *
-from index_and_direction import index, cell_index, displacement
+
 
 class A(index, displacement):
 

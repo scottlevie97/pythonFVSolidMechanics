@@ -1,17 +1,20 @@
-from setup import *
-from index_and_direction import cell_index
 from A_matrix import A
-from boundaryCellDisplacement import displacement_cell_BCs_A, displacement_cell_BCs_b
-from boundaryCellTraction import boundaryCellTraction, traction_cell_BCs_A, traction_cell_BCs_b
+from boundaryCellDisplacement import (displacement_cell_BCs_A,
+                                      displacement_cell_BCs_b)
+from boundaryCellTraction import (boundaryCellTraction, traction_cell_BCs_A,
+                                  traction_cell_BCs_b)
 from cell_corner_BCs import cell_corner_BCs_A, cell_corner_BCs_b
+from index_and_direction import cell_index
+from setup import *
 
-def cell_boundary_selection_A(A_matrix, k, boundaries, xy, U_old, U_old_old, U_previous):
+
+def cell_boundary_selection_A(A_matrix, k, boundaries, xy):
 
     if BC_settings(boundaries[0]).traction:
         A_matrix = traction_cell_BCs_A(A_matrix, k, boundaries, xy)
 
     elif BC_settings(boundaries[0]).fixed_displacement:
-        A_matrix = displacement_cell_BCs_A(A_matrix, k, boundaries, xy, U_old, U_old_old, U_previous)
+        A_matrix = displacement_cell_BCs_A(A_matrix, k, boundaries, xy)
 
     return A_matrix
 
@@ -32,56 +35,56 @@ def cell_boundary_selection_b(
 
     return b_matrix
 
-def boundary_conditions_A(A_matrix, U_previous, U_old, U_old_old, xy):
+def boundary_conditions_A(A_matrix, xy):
     for k in np.arange(0,(nx)*(ny)):   # j is the cell number
 
     #    #Bottom left corner coefficients        
         if cell_index().bottom_left_corner(k):  
 
             boundaries = ["b", "l"]
-            A_matrix = cell_corner_BCs_A(A_matrix, k, boundaries, xy, U_previous, U_old, U_old_old)          
+            A_matrix = cell_corner_BCs_A(A_matrix, k, boundaries, xy)          
 
         #Bottom right corner coefficients            
         elif  cell_index().bottom_right_corner(k):
             
             boundaries = ["b", "r"]
-            A_matrix = cell_corner_BCs_A(A_matrix, k, boundaries, xy, U_previous, U_old, U_old_old)          
+            A_matrix = cell_corner_BCs_A(A_matrix, k, boundaries, xy)          
 
         #Top left corner coefficients            
         elif  cell_index().top_left_corner(k):
             
             boundaries = ["t", "l"]
-            A_matrix = cell_corner_BCs_A(A_matrix, k, boundaries, xy, U_previous, U_old, U_old_old)          
+            A_matrix = cell_corner_BCs_A(A_matrix, k, boundaries, xy)          
             
         #Top right corner coefficients            
         elif  cell_index().top_right_corner(k):
 
             boundaries = ["t", "r"]
-            A_matrix = cell_corner_BCs_A(A_matrix, k, boundaries, xy, U_previous, U_old, U_old_old)          
+            A_matrix = cell_corner_BCs_A(A_matrix, k, boundaries, xy)          
             
         # Center Bottom Boundaries
         elif  cell_index().center_bottom(k):
             
             boundaries = ["b"]
-            A_matrix = cell_boundary_selection_A(A_matrix, k, boundaries, xy, U_old, U_old_old, U_previous)
+            A_matrix = cell_boundary_selection_A(A_matrix, k, boundaries, xy)
 
         # Center Top Boundaries
         elif cell_index().center_top(k):
             boundaries = ["t"]
 
-            A_matrix = cell_boundary_selection_A(A_matrix, k, boundaries, xy, U_old, U_old_old, U_previous)
+            A_matrix = cell_boundary_selection_A(A_matrix, k, boundaries, xy)
 
         # Center Left Boundaries
         elif  cell_index().center_left(k):
             boundaries = ["l"]
 
-            A_matrix = cell_boundary_selection_A(A_matrix, k, boundaries, xy, U_old, U_old_old, U_previous)
+            A_matrix = cell_boundary_selection_A(A_matrix, k, boundaries, xy)
 
         # Center Right Boundaries
         elif  cell_index().center_right(k):
             boundaries = ["r"]
 
-            A_matrix = cell_boundary_selection_A(A_matrix, k, boundaries, xy, U_old, U_old_old, U_previous)
+            A_matrix = cell_boundary_selection_A(A_matrix, k, boundaries, xy)
 
 
     return A_matrix

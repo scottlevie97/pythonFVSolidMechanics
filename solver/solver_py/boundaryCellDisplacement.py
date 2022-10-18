@@ -109,7 +109,7 @@ class boundaryCellDisplacement(A):
         
         return corner
 
-def displacement_cell_BCs_A(A_matrix, k, boundaries, xy, U_old, U_old_old, U_previous):
+def displacement_cell_BCs_A(A_matrix, k, boundaries, xy):
 
     A_matrix[k,k] = boundaryCellDisplacement(boundaries, xy).a_P
 
@@ -138,7 +138,7 @@ def displacement_cell_BCs_b(b_matrix, k, boundaries, xy, U_old, U_old_old, U_pre
     return b_matrix
 
 
-def displacement_cell_BCs_A(A_matrix, k, boundaries, xy, U_old, U_old_old, U_previous):
+def displacement_cell_BCs_A(A_matrix, k, boundaries, xy):
 
     A_matrix[k,k] = boundaryCellDisplacement(boundaries, xy).a_P
 

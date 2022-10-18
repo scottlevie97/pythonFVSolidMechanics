@@ -6,8 +6,8 @@ Ly = .1
 
 
 #### Mesh Grading ####
-nx = 80      
-ny = 8
+nx = 40      
+ny = 4
 
 
 #### Boundary Conditions ####
