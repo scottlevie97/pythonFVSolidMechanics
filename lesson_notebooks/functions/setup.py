@@ -6,14 +6,50 @@ from matplotlib import pyplot as plt
 import sys
 sys.path.append("functions/")
 
-def printVar (varname, var):
+from dim import dim
 
-    print(varname)
-    print(var)
+# Solve the 2D Navier-Cauchy equation using a segregated finite volume method
 
-def saveArray (name, array): 
+# Define mesh geometry and boundary conditions
 
-    pd.DataFrame(array).to_csv("Solution/" + name + ".csv", index=False, header=None)
+Lx = dim().Lx #width of domain
+Ly = dim().Ly #height of domain
+
+fac = 1
+
+nx = dim().nx      #number of control volumes in the x-direction
+ny = dim().ny     #number of control volumes in the y-direction
+
+
+# Cantilever Setup 
+
+tr_right_x = 0    #u boundary condition at the right boundary
+tr_right_y = - 1e6   #v boundary condition at the right boundary
+
+tr_top_x = 0    #u boundary condition at the top boundary
+tr_top_y = 0       #v boundary condition at the top boundary
+
+tr_bottom_x = 0    #u boundary condition at the bottom boundary 
+tr_bottom_y = 0  #v boundary condition at the bottom boundary
+
+u_left = 0
+v_left = 0
+
+# Mechanical Values
+
+rho = 8050 #density of steel in kg/m^3
+
+# Elastic Modulus (Pa) 
+E = 200*1e9
+
+# Poissons Ratio 
+v = 0.3
+
+# Shear Modulus (Pa)
+mu_ = E/(2*(1+v))
+
+# Lame Modulus (Pa)
+lambda_ = (v*E)/((1+v)*(1-2*v))
 
 
 # Set Boundary Conditions:
@@ -59,44 +95,6 @@ class BC_settings:
                 self.traction = False
 
 
-# Solve the 2D Navier-Cauchy equation using a segregated finite volume method
-
-# Define mesh geometry and boundary conditions
-
-Lx = 2 #width of domain
-Ly = .1 #height of domain
-
-fac = 1
-
-nx = 40      #number of control volumes in the x-direction
-ny = 4    #number of control volumes in the y-direction
-
-
-# Cantilever Setup 
-
-tr_right_x = 0    #u boundary condition at the right boundary
-tr_right_y = - 1e6   #v boundary condition at the right boundary
-
-tr_top_x = 0    #u boundary condition at the top boundary
-tr_top_y = 0       #v boundary condition at the top boundary
-
-tr_bottom_x = 0    #u boundary condition at the bottom boundary 
-tr_bottom_y = 0  #v boundary condition at the bottom boundary
-
-u_left = 0
-v_left = 0
-
-
-# my_file = open("index_and_direction.py")
-# string_list = my_file.readlines()
-# my_file.close()
-
-# string_list[9] = "\tnx = " + str(nx) + "\n"
-# string_list[10] = "\tny = " + str(ny) + "\n"
-
-# my_file = open("index_and_direction.py", "w")
-# my_file.writelines(string_list)
-# my_file.close()
 
 from index_and_direction import dim
 from index_and_direction import index

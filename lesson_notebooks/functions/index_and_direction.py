@@ -314,7 +314,3 @@ class displacement(boundary_point_index, cell_index, dim):
 
         if k <= boundary_point_index().top_right_right_val:
             self.NW = U_previous[k + (dim().nx + 2) - 1, direction]
-
-
-print(dim.nx)
-print(dim.ny)
