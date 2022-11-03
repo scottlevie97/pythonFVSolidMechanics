@@ -17,9 +17,11 @@ This learning framework is a set of Jupyter notebooks that provide an guide for 
 
 ## Where to start? 
 
+### View Notebooks
+
 To only view the notebooks use the following links to the desired notebooks. Then use the navigation arrows to move from notebook to notebook.
 
-### List of notebooks:
+#### List of notebooks:
 
 - [Notebook 1: Defining Mesh](https://nbviewer.org/github/scottlevie97/pythonFVSolidMechanics/blob/new-release/lesson_notebooks/_01_Defining_Mesh.ipynb?flush_cache=true)
 - [Notebook 2: Derivation & Discretisation](https://nbviewer.org/github/scottlevie97/pythonFVSolidMechanics/blob/new-release/lesson_notebooks/_02_Derivation_Discretistion.ipynb?flush_cache=true)
@@ -30,7 +32,9 @@ To only view the notebooks use the following links to the desired notebooks. The
 - [Notebook 7: Time Loop](https://nbviewer.org/github/scottlevie97/pythonFVSolidMechanics/blob/new-release/lesson_notebooks/_07_Time_Loop.ipynb?flush_cache=true)
 - [Notebook 8: Post-Processing](https://nbviewer.org/github/scottlevie97/pythonFVSolidMechanics/blob/new-release/lesson_notebooks/_08_Post-Processing.ipynb?flush_cache=true)
 
-If you want to be able to codealong or alter the notebooks try using the binder link below. This creates an online Jupyter notebook environment:
+### Run Notebooks Online
+
+If you want to be able to code along or alter the notebooks try using the binder link below. This creates an online Jupyter notebook environment:
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/git/https%3A%2F%2Fgithub.com%2Fscottlevie97%2FpythonFVSolidMechanics/new-release?labpath=lesson_notebooks)
 
@@ -40,12 +44,18 @@ This may take a few minutes to load. Once loaded:
 2. Open the <code>dependincies.ipynb</code> notebook and run the first cell by selecting the run cell icon <img src="lesson_notebooks/paper_images/run_cell.png" width=20px ></img>. This loads the necessary packages within the environment.
 3. Begin with notebook 1: <code>_01_Defining_Mesh.ipynb</code> and continue through to notebook 8.
 
-Alternatively you can clone this repository from the [Github repo](https://github.com/scottlevie97/pythonFVSolidMechanics).
+### Run Notebooks Locally
 
-You will need python3 and jupyter installed.
+Alternatively, you can clone this repository from the [Github repo](https://github.com/scottlevie97/pythonFVSolidMechanics).
 
-Before using these notebooks install the necessary dependencies by running the lesson_notebooks/Dependencies.ipynb notebook.
-
+1. Ensure you have [python3](https://www.python.org/downloads/) installed
+2. Install [Jupyter](https://jupyter.org/install):
+   - <code>pip install jupyterlab</code>
+3. Clone the [Github repo](https://github.com/scottlevie97/pythonFVSolidMechanics):
+   - <code>git clone https://github.com/scottlevie97/pythonFVSolidMechanics.git</code>
+4. Navigate to <code>pythonFVSolidMechanics/lesson_notebooks</code>
+5. Open and run <code>dependencies.ipynb</code>
+  
 ## Acknowledgements 
 
 Financial support is gratefully acknowledged from the Irish Research Council through the Laureate programme, grant number IRCLA/2017/45
