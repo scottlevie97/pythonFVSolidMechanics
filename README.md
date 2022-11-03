@@ -15,7 +15,11 @@ This learning framework is a set of Jupyter notebooks that provide an guide for 
 
 ![Image](lesson_notebooks/paper_images/sigmaxx.png)
 
-## List of notebooks:
+## Where to start? 
+
+To only view the notebooks use the following links to the desired notebooks. Then use the navigation arrows to move from notebook to notebook.
+
+### List of notebooks:
 
 - [Notebook 1: Defining Mesh](https://nbviewer.org/github/scottlevie97/pythonFVSolidMechanics/blob/new-release/lesson_notebooks/_01_Defining_Mesh.ipynb?flush_cache=true)
 - [Notebook 2: Derivation & Discretisation](https://nbviewer.org/github/scottlevie97/pythonFVSolidMechanics/blob/new-release/lesson_notebooks/_02_Derivation_Discretistion.ipynb?flush_cache=true)
@@ -26,15 +30,19 @@ This learning framework is a set of Jupyter notebooks that provide an guide for 
 - [Notebook 7: Time Loop](https://nbviewer.org/github/scottlevie97/pythonFVSolidMechanics/blob/new-release/lesson_notebooks/_07_Time_Loop.ipynb?flush_cache=true)
 - [Notebook 8: Post-Processing](https://nbviewer.org/github/scottlevie97/pythonFVSolidMechanics/blob/new-release/lesson_notebooks/_08_Post-Processing.ipynb?flush_cache=true)
 
-## Where to start? 
-
-If you want to be able to code/alter the notebooks use the binder link below. Binder creates an online Jupyter notebook environment.
-
-Run notebooks online using binder:
+If you want to be able to codealong or alter the notebooks try using the binder link below. This creates an online Jupyter notebook environment:
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/git/https%3A%2F%2Fgithub.com%2Fscottlevie97%2FpythonFVSolidMechanics/new-release?labpath=lesson_notebooks)
 
+This may take a few minutes to load. Once loaded:
+
+1. Use <code>ctrl</code> + <code>shift</code> + <code>f</code> to open the file browser. Or select the <img src="lesson_notebooks/paper_images/file_browser.png" width=20px ></img> icon in the top left corner.
+2. Run the <code>dependincies.ipynb</code> notebook. This loads the necessary packages within the environment.
+3. Begin with notebook 1: _01_Defining_Mesh.ipynb and continue through to notebook 8 using the navigation arrows. 
+
 Alternatively you can clone this repository from the [Github repo](https://github.com/scottlevie97/pythonFVSolidMechanics).
+
+
 
 You will need python3 and jupyter installed.
 
