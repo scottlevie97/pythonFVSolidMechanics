@@ -37,12 +37,10 @@ If you want to be able to codealong or alter the notebooks try using the binder 
 This may take a few minutes to load. Once loaded:
 
 1. Use <code>ctrl</code> + <code>shift</code> + <code>f</code> to open the file browser. Or select the <img src="lesson_notebooks/paper_images/file_browser.png" width=20px ></img> icon in the top left corner.
-2. Run the <code>dependincies.ipynb</code> notebook. This loads the necessary packages within the environment.
-3. Begin with notebook 1: _01_Defining_Mesh.ipynb and continue through to notebook 8 using the navigation arrows. 
+2. Open the <code>dependincies.ipynb</code> notebook and run the first cell by selecting the run cell icon <img src="lesson_notebooks/paper_images/run_cell.png" width=20px ></img>. This loads the necessary packages within the environment.
+3. Begin with notebook 1: <code>_01_Defining_Mesh.ipynb</code> and continue through to notebook 8.
 
 Alternatively you can clone this repository from the [Github repo](https://github.com/scottlevie97/pythonFVSolidMechanics).
-
-
 
 You will need python3 and jupyter installed.
 
