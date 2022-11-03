@@ -95,10 +95,31 @@ for time in t:
         # Update U_New with new u and v fields
         U_new = np.vstack((u, v)).T
 
-        # Calculate the residual of each iteration
+        # # Calculate the residual of each iteration
+        # SMALL = 1e-16
+        # normFactor = np.max(U_new) + SMALL
+        # residual = math.sqrt(np.mean((U_new - U_previous)**2))/normFactor
+
+        ## NEW RESIDUAL CALCULATION ##
         SMALL = 1e-16
-        normFactor = np.max(U_new) + SMALL
-        residual = math.sqrt(np.mean((U_new - U_previous)**2))/normFactor
+
+        # Error
+        error = U_new - U_previous
+        error_norm = np.sqrt((U_new - U_previous)**2)
+
+        normFactor_x = np.max(np.sqrt(U_new[:,0]**2) + SMALL)
+        normFactor_y =  np.max(np.sqrt(U_new[:,1]**2)+ SMALL)
+        normFactor = np.append(normFactor_x, normFactor_y) 
+
+        # l-infinity
+        l_infin_x = np.max(error_norm[0,:])
+        l_infin_y = np.max(error_norm[1,:])
+        l_infin = np.append(l_infin_x, l_infin_y)
+        l_infin_residual = l_infin/normFactor
+
+        residual = np.max(l_infin_residual)
+
+        ########
 
         # Append residual array with residual
         residual_array = np.append(residual_array, residual)

@@ -1,12 +1,14 @@
+from index_and_direction import dim
 import numpy as np
+import pandas as pd
 
 #### Geometry ####
-Lx = 2 
-Ly = .1 
+Lx = 2
+Ly = .1
 
 
 #### Mesh Grading ####
-nx = 40      
+nx = 40
 ny = 4
 
 
@@ -52,14 +54,15 @@ class BC_settings:
                 self.fixed_displacement = True
                 self.traction = False
 
-tr_right_x = 0       #u boundary condition at the right boundary
-tr_right_y = -1e6   #v boundary condition at the right boundary
 
-tr_top_x = 0    #u boundary condition at the top boundary
-tr_top_y = 0       #v boundary condition at the top boundary
+tr_right_x = 0  # u boundary condition at the right boundary
+tr_right_y = -1e6  # v boundary condition at the right boundary
 
-tr_bottom_x = 0    #u boundary condition at the bottom boundary 
-tr_bottom_y = 0  #v boundary condition at the bottom boundary
+tr_top_x = 0  # u boundary condition at the top boundary
+tr_top_y = 0  # v boundary condition at the top boundary
+
+tr_bottom_x = 0  # u boundary condition at the bottom boundary
+tr_bottom_y = 0  # v boundary condition at the bottom boundary
 
 u_left = 0
 v_left = 0
@@ -67,12 +70,12 @@ v_left = 0
 
 #### Mechanical Properties #####
 
-rho = 8050 #density of steel in kg/m^3
+rho = 8050  # density of steel in kg/m^3
 
-# Elastic Modulus (Pa) 
+# Elastic Modulus (Pa)
 E = 200*1e9
 
-# Poissons Ratio 
+# Poissons Ratio
 v = 0.3
 
 # Shear Modulus (Pa)
@@ -88,7 +91,7 @@ lambda_ = (v*E)/((1+v)*(1-2*v))
 transient = False
 
 # Total time
-tf = 1    
+tf = 1
 
 # Timestep size
 dt = 0.01
@@ -101,9 +104,11 @@ dt = 0.01
 def saveDirectory(nx, ny):
     return "/home/scottlevie/foam/scottlevie-4.0/pythonFVSolidMechanics/extra/mesh-sensitivity/pythonSolver/x_" + str(nx) + "_y_" + str(ny)
 
-def saveArray (name, array): 
 
-    pd.DataFrame(array).to_csv(saveDirectory(nx, ny) + "/" + name + ".csv", index=False, header=None)
+def saveArray(name, array):
+
+    pd.DataFrame(array).to_csv(saveDirectory(nx, ny) + "/" +
+                               name + ".csv", index=False, header=None)
 
 
 #### Write settings to another python file####
@@ -119,46 +124,47 @@ my_file = open("index_and_direction.py", "w")
 my_file.writelines(string_list)
 my_file.close()
 
-from index_and_direction import dim
 
 print(dim().nx)
 print(dim().ny)
 
 #### Create position and time vectors ####
 
-t = np.array(np.arange(0,tf, dt))
+t = np.array(np.arange(0, tf, dt))
 
-#length of each cell in the x-direction
-dx = Lx/nx 
-#length of each cell in the x-direction        
-dy = Ly/ny          
+# length of each cell in the $x$-direction
+dx = Lx/nx
+# length of each cell in the $x$-direction
+dy = Ly/ny
 
 # Position vector x
-x = np.zeros((1,nx+2))  
-x[0,nx+1] = Lx
-x[0,1:nx+1] = np.arange(dx/2,Lx,dx)
+x = np.zeros((1, nx+2))
+x[0, nx+1] = Lx
+x[0, 1:nx+1] = np.arange(dx/2, Lx, dx)
 
 # Position vector y
-y = np.zeros((1,ny+2))  
-y[0,1:ny+1] = np.arange(dy/2,Ly,dy)
+y = np.zeros((1, ny+2))
+y[0, 1:ny+1] = np.arange(dy/2, Ly, dy)
 
 
-#### Initialise U fields #### 
+#### Initialise U fields ####
 
-U_new = np.zeros([(ny)*(nx),2])         #unknown displacements at t + 1    (Column 1 = x, Column2 = y)
-U_old = np.zeros([(ny)*(nx),2])         #displacement at time t
-U_old_old = np.zeros([(ny)*(nx),2])     #displacement at time t - 1
+# unknown displacements at t + 1    (Column 1 = x, Column2 = y)
+U_new = np.zeros([(ny)*(nx), 2])
+U_old = np.zeros([(ny)*(nx), 2])  # displacement at time t
+U_old_old = np.zeros([(ny)*(nx), 2])  # displacement at time t - 1
 
 
 #### Initialise b matrices ####
 
-b_x = np.zeros([(ny)*(nx),1])
-b_y = np.zeros([(ny)*(nx),1])
+b_x = np.zeros([(ny)*(nx), 1])
+b_y = np.zeros([(ny)*(nx), 1])
 
 #### Surface area vectors ####
 
-Sfx = dy            #area vector x component (Area of East and West Faces)
-Sfy = dx            #area vector y component (Area of North and South Faces)
+Sfx = dy  # area vector x component (Area of East and West Faces)
+Sfy = dx  # area vector y component (Area of North and South Faces)
+
 
 class boundary_U:
 
