@@ -63,9 +63,9 @@ Financial support is gratefully acknowledged from the Irish Research Council thr
 Additionally, the authors want to acknowledge project affiliates, Bekaert, through the Bekaert University Technology Centre (UTC) at UCD (www.ucd.ie/bekaert), and I-Form, funded by Science Foundation Ireland (SFI) Grant Number 16/RC/3872, co-funded under European Regional Development Fund and by I-Form industry partners.
 
 <center>
-<img src="lesson_notebooks/paper_images/Readme/iform.png" style="height: 50px"/>
-<img src="lesson_notebooks/paper_images/Readme/irc.jpg" style="height: 50px"/>
-<img src="lesson_notebooks/paper_images/Readme/sfc.jpg" style="height: 50px"/>
+<img src="images/Readme/iform.png" style="height: 50px"/>
+<img src="images/Readme/irc.jpg" style="height: 50px"/>
+<img src="images/Readme/sfc.jpg" style="height: 50px"/>
 </center>
 
 
