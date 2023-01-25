@@ -2,6 +2,6 @@
 
 conda activate base
 
-jupyter nbconvert --to html  ../lesson_notebooks/_0*.ipynb 
+ipython nbconvert --to html  ../lesson_notebooks/_0*.ipynb 
 
 mv ../lesson_notebooks/*html .
